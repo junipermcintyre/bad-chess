@@ -12,3 +12,5 @@ It's not even done! Win conditions aren't written, knights & bishops & kings & q
 ## Notes
 All the classes are in `/src`. The chess game has its own class (`src/chess.py`) and the pieces each have their own class (`src/[piece_name].py`). There's also a parent class for the pieces (`piece.py`).
 
+## Documentation
+Ha! I'm not writing any for this. Lol.
