@@ -7,7 +7,7 @@ print game.printLegend()
 
 turn = "white"
 moves = []
-while game.checkMate() == 0:
+while game.checkMate() is 0:
     print "Player's turn - " + turn
     coords = raw_input("Enter move [X# Y#]: ")
     while len(coords) != 5:
@@ -29,3 +29,12 @@ while game.checkMate() == 0:
         turn = "black"
     else:
         turn = "white"
+
+winner = game.checkMate()
+print game.printBoard()
+if winner is 1:
+    print "Congratulations - white player has taken the black king!"
+elif winner is 2:
+    print "Congratulations - black player has taken the white king!"
+else:
+    print "Draw - no player wins"

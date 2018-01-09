@@ -2,12 +2,13 @@
 class Piece:
     team = None
     name = "piece"
+    alive = True
 
     def __init__(self, color):
         self.team = color
 
     def die(self):
-        self.alive = false
+        self.alive = False
 
     def attemptMove(self, a, b, defender, chess, turn):
         if turn is not self.team:

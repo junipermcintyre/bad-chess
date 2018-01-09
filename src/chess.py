@@ -18,6 +18,9 @@ class Chess:
             [None, None, None, None, None, None, None, None],
             [None, None, None, None, None, None, None, None]]
 
+    whiteKing = None
+    blackKing = None
+
     """Build the chess board"""
     def __init__(self):
         self.resetBoard()
@@ -108,11 +111,19 @@ class Chess:
         blackKing = King("black")
         self.setPiece(self.coord(3, 7), blackKing)
 
+        self.whiteKing = whiteKing
+        self.blackKing = blackKing
+
 
     """Check if the game is over. Return 0 = game still in progress. 1 = white win. 2 = black win."""
     def checkMate(self):
         # Check if kings are alive
-        return 0
+        if not self.blackKing.alive:
+            return 1
+        elif not self.whiteKing.alive:
+            return 2
+        else:
+            return 0
 
     """Try to move a piece"""
     def move(self, a, b, turn):
@@ -128,6 +139,8 @@ class Chess:
         if (attacker.attemptMove(a, b, defender, self, turn)):
             self.setPiece(a, None)
             self.setPiece(b, attacker)
+            if defender is not None:
+                defender.die()
             return True
 
         return False
