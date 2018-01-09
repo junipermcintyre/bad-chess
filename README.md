@@ -3,7 +3,7 @@ This is literally just a poorly coded game of chess for two players.
 
 It's just for brushing up on Python really.
 
-It's not even done! Win conditions aren't written, ~~knights & bishops & kings & queens can't even move~~.
+It's not even done! ~~Win conditions aren't written~~, ~~knights & bishops & kings & queens can't even move~~ (it's still bad even though those got completed).
 
 ## Install & Run
 1. Clone
