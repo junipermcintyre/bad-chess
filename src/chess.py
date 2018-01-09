@@ -24,19 +24,21 @@ class Chess:
 
     """Display board"""
     def printBoard(self):
-        boardStr = "  A B C D E F G H\n"
-        boardStr += " +-+-+-+-+-+-+-+-+\n"
+        boardStr = "    A   B   C   D   E   F   G   H\n"
+        boardStr += "  +---+---+---+---+---+---+---+---+\n"
         for i in range(0,8):
-            boardStr += str(i) + "|";
+            boardStr += str(i) + " | ";
             for j in range(0,8):
                 coord = {'x':j, 'y':i}
                 piece = self.getPiece(coord)
                 if piece != None:
-                    boardStr += piece.getSymbol() + "|"
+                    boardStr += piece.getSymbol() + " | "
                 else:
-                    boardStr += " |"
-            boardStr += "\n"
-            boardStr += " +-+-+-+-+-+-+-+-+\n"
+                    boardStr += "  | "
+            boardStr += str(i) + "\n"
+            boardStr += "  +---+---+---+---+---+---+---+---+\n"
+
+        boardStr += "    A   B   C   D   E   F   G   H\n"
         return boardStr
 
     """Display legend"""
@@ -44,8 +46,16 @@ class Chess:
         legendStr = "CHESS BOARD LEGEND\n"
         pawn = Pawn("white")
         castle = Castle("white")
+        bishop = Bishop("white")
+        knight = Knight("white")
+        queen = Queen("white")
+        king = King("white")
         legendStr += pawn.getSymbol() + ":    Pawn\n"
         legendStr += castle.getSymbol() + ":    Castle\n"
+        legendStr += knight.getSymbol() + ":    Knight\n"
+        legendStr += bishop.getSymbol() + ":    Bishop\n"
+        legendStr += queen.getSymbol() + ":    Queen\n"
+        legendStr += king.getSymbol() + ":    King\n"
         return legendStr
 
     """Set all the pieces back where they belong"""

@@ -6,6 +6,7 @@ print game.printBoard()
 print game.printLegend()
 
 turn = "white"
+moves = []
 while game.checkMate() == 0:
     print "Player's turn - " + turn
     coords = raw_input("Enter move [X# Y#]: ")
@@ -20,6 +21,7 @@ while game.checkMate() == 0:
             coords = raw_input("Respect syntax - Enter move [X# Y#]: ")
         start = coords[:2]
         end = coords[3:]
+        moves.append(coords)
 
     print game.printBoard()
 
